@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Prosto+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Prosto+One&display=swap");
 
 :root {
   --primary-font: "Cambay", sans-serif;
-  --bg-color: "#060047";
-  --text-color: "#2D2727";
-  --upButton-color: "#539165";
-  --downButton-color: "#F7C04A";
-  --lift-color: "#537FE7";
-  --border-color: "#000000";
-  --door-color: "#19A7CE";
+  --bg-color: #060047;
+  --text-color: #2d2727;
+  --upButton-color: #539165;
+  --downButton-color: #f7c04a;
+  --lift-color: #537fe7;
+  --border-color: #000000;
+  --door-color: #19a7ce;
 }
 
 * {

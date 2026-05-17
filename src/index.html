@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lift Simulator</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <header>
-        <h1 class="welcome__message">welcome to Lift simulator</h1>
+      <h1 class="welcome__message">welcome to Lift simulator</h1>
       <section class="countShow_section">
         <h3 class="floor_count"></h3>
         <h3 class="lift_count"></h3>
+      </section>
     </header>
     <main>
       <section class="input__section">
@@ -25,6 +26,7 @@
                 >
                 <input
                   type="number"
+                  id="floorInput"
                   class="floor__input input_from_user"
                   name="floorInput"
                   placeholder="Enter The Number Of Floors"
@@ -36,6 +38,7 @@
                 >
                 <input
                   type="number"
+                  id="liftInput"
                   class="lift__input input_from_user"
                   name="liftInput"
                   placeholder="Enter The Number Of Lifts"
@@ -49,5 +52,5 @@
       <section class="output__section"></section>
     </main>
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>

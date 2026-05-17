@@ -13,10 +13,15 @@ let leftLiftcalls = [];
 
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  floorCount = floorInput.value;
-  liftCount = liftInput.value;
+  floorCount = parseInt(floorInput.value, 10);
+  liftCount = parseInt(liftInput.value, 10);
 
-  if (floorCount <= 0 || liftCount <= 0) {
+  if (
+    isNaN(floorCount) ||
+    isNaN(liftCount) ||
+    floorCount <= 0 ||
+    liftCount <= 0
+  ) {
     return alert("Invalid Input, Please Try Again!!");
   }
 
@@ -33,12 +38,19 @@ function handleFloor(totalFloors) {
   const topFloor = document.createElement("section");
   topFloor.className = "floor";
   topFloor.id = `floor-${totalFloors}`;
-  topFloor.innerHTML = `
-    <section class="floor-details">
-        <button type="" class="lift-control down">↓</button>
-        <p class="floor-number">Floor-${totalFloors}</p>
-    </section>
-    `;
+  const floorDetails = document.createElement("section");
+  floorDetails.className = "floor-details";
+
+  const downBtn = document.createElement("button");
+  downBtn.className = "lift-control down";
+  downBtn.textContent = "↓";
+
+  const floorLabel = document.createElement("p");
+  floorLabel.className = "floor-number";
+  floorLabel.textContent = `Floor-${totalFloors}`;
+
+  floorDetails.append(downBtn, floorLabel);
+  topFloor.appendChild(floorDetails);
   topFloor
     .querySelector(".down")
     .addEventListener("click", (e) => handleLiftCall(e));
@@ -104,7 +116,9 @@ function handleLift(totalLifts) {
 
 //handle lift call
 function handleLiftCall(event) {
-  const floorId = event.composedPath()[2].id;
+  const floorElement = event.target.closest(".floor");
+  if (!floorElement) return;
+  const floorId = floorElement.id;
 
   if (floorMaping.get(floorId) != null) {
     const mappedliftId = floorMaping.get(floorId);
